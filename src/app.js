@@ -8,7 +8,6 @@ ReactDOM.render(
   <Router history={createBrowserHistory()}>
     <Route path='/' component={IndexPage}/>
     <Route path='/upload' component={UploadPage}/>
-
   </Router>,
   document.getElementById('app-container')
 );
