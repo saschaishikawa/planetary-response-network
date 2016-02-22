@@ -11,7 +11,7 @@ export default class UploadPage extends React.Component {
         <div className='UploadPage'>
           <Header/>
           <div className='container'>
-            <h2 className='text-center'>AOI Uploader</h2>
+            <h2 className='text-center'>Upload</h2>
             <hr />
 
 

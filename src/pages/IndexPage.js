@@ -10,7 +10,7 @@ export default class IndexPage extends React.Component {
         <div className='IndexPage'>
           <Header/>
           <div className='container'>
-            <h2 className='text-center'>AOI Uploader</h2>
+            <h2 className='text-center'>AOI Uploader App</h2>
             <hr />
             <div className='jumbotron'>
               <p>
