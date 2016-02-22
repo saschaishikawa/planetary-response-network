@@ -3,11 +3,11 @@ import React, { PropTypes } from 'react';
 import DocumentTitle from 'react-document-title';
 import Header from './Header'
 
-export default class IndexPage extends React.Component {
+export default class UploadPage extends React.Component {
   render() {
     return (
       <DocumentTitle title='AOI Uploader'>
-        <div className='IndexPage'>
+        <div className='UploadPage'>
           <Header/>
           <div className='container'>
             <h2 className='text-center'>AOI Uploader</h2>
@@ -15,13 +15,16 @@ export default class IndexPage extends React.Component {
             <div className='jumbotron'>
               <p>
                 <strong>
-                  Generate subjects for your Zooniverse project from satellite data.
+                  Upload a KML file
                 </strong>
               </p>
-              <p>
-                This app enables you to upload a geographic area of interest (AOI) as a KML file, used to fetch satellite mosaics that overlap with the region.
-                The mosaics are tilized, uploaded to an AWS S3 bucket, and subjects are generated and loaded into your Zooniverse project.
-              </p>
+
+              <form method="POST" enctype="multipart/form-data" action="/aois" class="uploader">
+                <label for="file">Drop a file here, or click to browse</label>
+                <input id="file" type="file" name="file"/>
+                  <button type="submit">Upload</button>
+              </form>
+
             </div>
           </div>
         </div>
