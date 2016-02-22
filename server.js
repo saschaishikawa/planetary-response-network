@@ -1,4 +1,3 @@
-var stormpath = require('express-stormpath');
 var morgan = require('morgan');
 var path = require('path');
 var express = require('express');
@@ -19,26 +18,15 @@ app.get('/css/bootstrap.min.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'build/css/bootstrap.min.css'));
 });
 
-stormpath.init(app, {
-  website: true,
-  web: {
-    spaRoot: path.join(__dirname, 'build/index.html')
-  }
-});
-
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build/index.html'));
 });
 
-app.on('stormpath.ready', function () {
-  console.log('Stormpath Ready');
-    
-  app.listen(3000, 'localhost', function (err) {
-    if (err) {
-      console.log(err);
-      return;
-    }
+app.listen(3000, 'localhost', function (err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
 
-    console.log('Listening at http://localhost:3000');
-  });
+  console.log('Listening at http://localhost:3000');
 });
