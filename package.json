@@ -45,8 +45,8 @@
     "webpack-dev-middleware": "^1.4.0"
   },
   "scripts": {
-    "producer": "nodemon ./server.js",
-    "consumer": "NODE_ENV=staging nodemon ./generator/main.js",
+    "producer": "node server.js",
+    "consumer": "NODE_ENV=staging node ./generator/main.js",
     "start": "npm run producer & npm run consumer"
   }
 }
