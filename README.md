@@ -1,61 +1,18 @@
-# Stormpath React + Express Fullstack Example Project
+# generate-subjects-from-planet-api
+Create Zooniverse subjects via Planet Labs API using area of interest (AOI) queries.
 
-This repository is an example fullstack web application, using React on the
-front-end and Express.js as your back-end server.  It uses [express-stormpath][]
-and [stormpath-sdk-react][] to authenticate users, protect your server API,
-and render default login and registration screens in your React application.
+## Getting Started
+Clone and `npm install`. A number of environmental variables must be set:
 
-## 1. Getting Started
+* `PLANET_API_KEY` to retrieve the mosaics. You'll need an API key from Planet Labs
+* to deploy to subjects to your Zooniverse project you'll need to [build a project](https://www.zooniverse.org/lab) and set the variables `ZOONIVERSE_USERNAME` and `ZOONIVERSE_PASSWORD` with your username and password, respectively
+* `AMAZON_ACCESS_KEY_ID` and `AMAZON_SECRET_ACCESS_KEY` an S3 bucket in order to deploy subjects
 
-To run this example project on your local computer, you will need to have
-[Node.js][] installed and a [Stormpath][] tenant account.
-If you don't have a Stormpath account, sign up for a free account at [https://api.stormpath.com/register](https://api.stormpath.com/register).
+Run `docker-compose up`. The main application container and a redis container will be started. You can then upload KML files at http://localhost:3736.
 
-## 2. Installation
+## Running outside of Docker
+1) Set up a [redis](https://redis.io) server.
+2) Run `REDIS_HOST=your-redis-host.com npm start` (if you need to set a custom port for redis, use `REDIS_PORT`)
 
-Clone this repository, then using a terminal, navigate to the directory and run the following:
-
-```bash
-$ npm install
-```
-
-## 3. Configuration
-
-In the application directory, create a file named `stormpath.yml` and
-place the configuration below in the file:
-
-```yaml
-client:
-  apiKey:
-    id: YOUR_API_KEY_ID
-    secret: YOUR_API_KEY_SECRET
-application:
-  href: https://api.stormpath.com/v1/applications/XXXX <-- YOUR APP HREF
-```
-
-## 4. Usage
-
-To start the server, run this command in the folder:
-
-```bash
-$ npm start
-```
-
-If the server is able to start with your configuration, you will see this in
-your terminal:
-
-```bash
-Stormpath Ready
-Application running at http://localhost:3000
-```
-
-The application should now be running in your browser at [http://localhost:3000](http://localhost:3000).
-
-You can get your API Keys and Application HREF from the
-[Stormpath Admin Console][].
-
-[Node.js]: https://nodejs.org
-[Stormpath]: https://stormpath.com
-[Stormpath Admin Console]: https://api.stormpath.com
-[stormpath-sdk-react]: https://github.com/stormpath/stormpath-sdk-react
-[express-stormpath]: https://github.com/stormpath/express-stormpath
+## Tests
+We should write some of these.
