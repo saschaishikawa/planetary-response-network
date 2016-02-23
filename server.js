@@ -44,10 +44,10 @@ app.post('/aois', upload.single('file'), processAoi)
 //   var job = fork(script, [req.file.path])
 // })
 
-app.listen(3736, 'localhost', function (err) {
+app.listen(3736, function (err) {
   if (err) {
     console.log(err);
     return;
   }
-  console.log('Listening at http://localhost:3736');
+  console.log('Server listening on port: 3736');
 });
