@@ -1,10 +1,5 @@
 {
-  "name": "stormpath-express-react-example",
-  "version": "0.1.0",
-  "description": "A sample app demonstrating how to integrate Stormpath with React and Express.",
-  "homepage": "https://github.com/stormpath/stormpath-express-react-example",
-  "author": "Stormpath, Inc.",
-  "license": "Apache-2.0",
+  "name": "planetary-response-network",
   "dependencies": {
     "async": "~1.5.2",
     "aws-sdk": "^2.2.32",
@@ -50,6 +45,8 @@
     "webpack-dev-middleware": "^1.4.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "producer": "nodemon ./server.js",
+    "consumer": "NODE_ENV=staging nodemon ./generator/main.js",
+    "start": "npm run producer & npm run consumer"
   }
 }
